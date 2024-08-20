@@ -3,6 +3,8 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
     chrome.storage.local.get(['links'], function(result) {
         const links = result.links || [];
         let tabUrl = tab.url;
+        console.log(tab.url);
+        console.log(links);
         if(links.includes(tabUrl)) {
           chrome.scripting.executeScript({
             target: { tabId: tabId },
@@ -38,6 +40,15 @@ function showModal() {
     const message = document.createElement('p');
     message.textContent = 'Are you sure?';
   
+    сonst timerMessage = document.createElement('p');
+    timerMessage.id = 'timerMessage';
+    timerMessage.style.fontSize = '18px';
+    timerMessage.style.marginTop = '10px';
+
+    let timeLeft = 5;
+    timerMessage.textContent = `Redirecting in ${timeLeft} seconds...`;
+
+
     const confirmButton = document.createElement('button');
     confirmButton.id = 'confirmButton';
     confirmButton.textContent = 'Go to Google';
@@ -57,8 +68,14 @@ function showModal() {
     modal.appendChild(confirmButton);
     overlay.appendChild(modal);
     document.body.appendChild(overlay);
-  
-    setTimeout(() => {
-      window.location.href = 'https://en.wikipedia.org/wiki/Special:Random';
-    }, 5000);
+    
+    const countdown = setInterval(() => {
+      timeLeft -= 1;
+      if (timeLeft > 0) {
+        timerMessage.textContent = `Redirecting in ${timeLeft} seconds...`;
+      } else {
+        clearInterval(countdown);
+        window.location.href = 'https://en.wikipedia.org/wiki/Special:Random';
+      }
+    }, 1000);
   }

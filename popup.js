@@ -46,6 +46,19 @@ document.addEventListener('DOMContentLoaded', function () {
     });
     this.blur();
   });
+  // https://www.google.com/intl/ru/gmail/about/
+  // https://mail.google.com/mail/u/0/#inbox
+  // https://www.google.com/search?client=safari&rls=en&q=it&ie=UTF-8&oe=UTF-8
+  // http://www.vsemba.sk/Portals/0/Subory/ERASMUS/IS_BE.pdf?ver=2023-11-20-144223-543
+  // http://3porno365.biz/
+  // http://mob.porno365.bond/
+  // https://y.hentaichan.live/user/N1kasik/
+  // https://lms.khpi.ucode-connect.study/
+  function trimLink(link) {
+    if(link.substring(0, 4) === "http") {
+      console.log(link.split("/")[1]);
+    }
+  }
 
   // function addLinkToList(link) {
 
