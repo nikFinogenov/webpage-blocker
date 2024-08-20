@@ -19,8 +19,8 @@ document.addEventListener('DOMContentLoaded', function () {
           links.push(link);
           chrome.storage.local.set({ links: links }, function() {
             // addLinkToList(link);
-            linkInput.value = '';
           });
+          linkInput.value = '';
         }
         else {
           alert("already in list")
