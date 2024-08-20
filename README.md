@@ -4,7 +4,7 @@
   alt="Project logo"></a>
 </p>
 
-<h3 align="center">Project Title</h3>
+<h3 align="center">Webpage blocker</h3>
 
 <div align="center">
 
