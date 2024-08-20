@@ -3,7 +3,8 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
     chrome.storage.local.get(['links'], function(result) {
         const links = result.links || [];
         let tabUrl = tab.url;
-        trimLink(tabUrl);
+        // trimLink(tabUrl);
+        console.log(trimLink(tab.url));
         // console.log(tab.url);
         // console.log(links);
         if(links.includes(trimLink(tabUrl))) {
@@ -16,7 +17,7 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
   });
   function trimLink(link) {
     if(link.substring(0, 4) === "http") {
-      return link.split("/")[1];
+      return link.split("/")[2];
     }
     else return link;
   }
