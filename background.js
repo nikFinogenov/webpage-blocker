@@ -3,9 +3,10 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
     chrome.storage.local.get(['links'], function(result) {
         const links = result.links || [];
         let tabUrl = tab.url;
+        trimLink(tabUrl);
         // console.log(tab.url);
         // console.log(links);
-        if(links.includes(tabUrl)) {
+        if(links.includes(trimLink(tabUrl))) {
           chrome.scripting.executeScript({
             target: { tabId: tabId },
             function: showModal
@@ -13,7 +14,12 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
         }
       });
   });
-
+  function trimLink(link) {
+    if(link.substring(0, 4) === "http") {
+      return link.split("/")[1];
+    }
+    else return link;
+  }
 function showModal() {
     const overlay = document.createElement('div');
     overlay.id = 'overlay';
@@ -80,3 +86,4 @@ function showModal() {
       }
     }, 1000);
   }
+  

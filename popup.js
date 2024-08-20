@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (link) {
       chrome.storage.local.get(['links'], function(result) {
         const links = result.links || [];
-        if(!links.includes(link)) {
+        if(!links.includes(trimLink(link))) {
           links.push(link);
           chrome.storage.local.set({ links: links }, function() {
             // addLinkToList(link);
@@ -54,10 +54,12 @@ document.addEventListener('DOMContentLoaded', function () {
   // http://mob.porno365.bond/
   // https://y.hentaichan.live/user/N1kasik/
   // https://lms.khpi.ucode-connect.study/
+  // https://ru.wikipedia.org/wiki/%D0%97%D0%B0%D0%B3%D0%BB%D0%B0%D0%B2%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0
   function trimLink(link) {
     if(link.substring(0, 4) === "http") {
-      console.log(link.split("/")[1]);
+      return link.split("/")[1];
     }
+    else return link;
   }
 
   // function addLinkToList(link) {
