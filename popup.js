@@ -4,11 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const deleteLast = document.getElementById('deleteLast');
   const deleteAll = document.getElementById('deleteAll');
   const linkList = document.getElementById('linkList');
-
-  chrome.storage.local.get(['links'], function(result) {
-    // const links = result.links || [];
-    // links.forEach(link => addLinkToList(link));
-  });
+  
 
   saveLink.addEventListener('click', function () {
     const link = linkInput.value;

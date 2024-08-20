@@ -5,7 +5,11 @@
     "description": "No description",
     "manifest_version": 3,
     "author": "Nik Fin",
-    "permissions": ["storage"],
+    "permissions": ["tabs", "storage", "activeTab", "scripting"],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "host_permissions": ["*://*/*"],
     "action":{
         "default_popup": "index.html",
         "default_title": "Wblocker"
