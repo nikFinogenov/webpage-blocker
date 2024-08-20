@@ -1,0 +1,11 @@
+{
+    "name": "WB",
+    "version": "1.0.0",
+    "description": "No description",
+    "manifest_version": 3,
+    "author": "Nik Fin",
+    "action":{
+        "default_popup": "index.html",
+        "default_title": "Wblocker"
+    }
+}
