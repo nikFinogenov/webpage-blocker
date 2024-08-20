@@ -13,7 +13,6 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
   });
 
 function showModal() {
-    console.log("ya here!");
     const overlay = document.createElement('div');
     overlay.id = 'overlay';
     overlay.style.position = 'fixed';
@@ -51,7 +50,7 @@ function showModal() {
     confirmButton.style.marginTop = '20px';
   
     confirmButton.addEventListener('click', function() {
-      window.location.href = 'https://www.google.com';
+      window.location.href = 'https://en.wikipedia.org/wiki/Special:Random';
     });
   
     modal.appendChild(message);
@@ -60,6 +59,6 @@ function showModal() {
     document.body.appendChild(overlay);
   
     setTimeout(() => {
-      window.location.href = 'https://www.google.com';
+      window.location.href = 'https://en.wikipedia.org/wiki/Special:Random';
     }, 5000);
   }
