@@ -3,8 +3,8 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
     chrome.storage.local.get(['links'], function(result) {
         const links = result.links || [];
         let tabUrl = tab.url;
-        console.log(tab.url);
-        console.log(links);
+        // console.log(tab.url);
+        // console.log(links);
         if(links.includes(tabUrl)) {
           chrome.scripting.executeScript({
             target: { tabId: tabId },
@@ -40,7 +40,7 @@ function showModal() {
     const message = document.createElement('p');
     message.textContent = 'Are you sure?';
   
-    сonst timerMessage = document.createElement('p');
+    const timerMessage = document.createElement('p');
     timerMessage.id = 'timerMessage';
     timerMessage.style.fontSize = '18px';
     timerMessage.style.marginTop = '10px';
@@ -51,7 +51,7 @@ function showModal() {
 
     const confirmButton = document.createElement('button');
     confirmButton.id = 'confirmButton';
-    confirmButton.textContent = 'Go to Google';
+    confirmButton.textContent = 'Skip timer';
     confirmButton.style.background = '#007bff';
     confirmButton.style.color = 'white';
     confirmButton.style.padding = '10px 20px';
@@ -65,6 +65,7 @@ function showModal() {
     });
   
     modal.appendChild(message);
+    modal.appendChild(timerMessage);
     modal.appendChild(confirmButton);
     overlay.appendChild(modal);
     document.body.appendChild(overlay);
