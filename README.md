@@ -58,7 +58,7 @@ cd web-blocker
 
 - Chrome
   
-  1. Open Chrome and go to [chrome://extensions/]
+  1. Open Chrome and go to chrome://extensions/
   2. Enable __"Developer mode"__ using the toggle in the top right.
   3. Click __"Load unpacked"__ and select the WebBlocker directory.
   4. Pin the WebBlocker extension to the top right corner of your browser for ease of use 😊
