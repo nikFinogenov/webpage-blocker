@@ -25,82 +25,55 @@
 
 - [About](#about)
 - [Getting Started](#getting_started)
-- [Deployment](#deployment)
 - [Usage](#usage)
-- [Built Using](#built_using)
-- [TODO](../TODO.md)
-- [Contributing](../CONTRIBUTING.md)
+- [Future plans](#future)
 - [Authors](#authors)
 - [Acknowledgments](#acknowledgement)
 
 ## 🧐 About <a name = "about"></a>
 
-Write about 1-2 paragraphs describing the purpose of your project.
+Project WebBlocker is designed to provide users with a robust solution for managing online 
+distractions by blocking access to entire domains. The primary goal of this tool is to help individuals maintain focus and productivity by preventing access to specified websites. For instance, if a user adds the link "https://qwerty.ru" to the WebBlocker, the tool will automatically block all related domains, including "4qwerty", "qwerty.ua", and "su.qwerty.com". Instead of encountering a standard error page or being denied access, users will be redirected to a random Wikipedia page. This not only helps circumvent potential distractions but also encourages engagement with educational content, offering an incidental learning opportunity while maintaining productivity.
 
 ## 🏁 Getting Started <a name = "getting_started"></a>
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See [deployment](#deployment) for notes on how to deploy the project on a live system.
 
-### Prerequisites
-
-What things you need to install the software and how to install them.
-
-```
-Give examples
-```
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running.
-
-Say what the step will be
+Start by cloning the project from [GitHub](https://github.com/nikFinogenov/webpage-blocker).
 
 ```
-Give the example
+git clone https://github.com/nikFinogenov/webpage-blocker
+```
+### Find project
+
+Navigate to the project directory
+```bash
+cd web-blocker
 ```
 
-And repeat
+### Load the Extension
 
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo.
-
-## 🔧 Running the tests <a name = "tests"></a>
-
-Explain how to run the automated tests for this system.
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
+- Chrome
+  
+  1. Open Chrome and go to [chrome://extensions/]
+  2. Enable __"Developer mode"__ using the toggle in the top right.
+  3. Click __"Load unpacked"__ and select the WebBlocker directory.
+  4. Pin the WebBlocker extension to the top right corner of your browser for ease of use 😊
 
 ## 🎈 Usage <a name="usage"></a>
 
-Add notes about how to use the system.
+1. Click extension logo
+2. Paste or write down link that you want to block
+>  You can insert links with or without domain, with _http_ or _https_, even with path! WebBlocker will find necessary part itself.
 
-## 🚀 Deployment <a name = "deployment"></a>
+## 📅 Future plans <a name = "future"></a>
 
-Add additional notes about how to deploy this on a live system.
-
-## ⛏️ Built Using <a name = "built_using"></a>
-
-- [MongoDB](https://www.mongodb.com/) - Database
-- [Express](https://expressjs.com/) - Server Framework
-- [VueJs](https://vuejs.org/) - Web Framework
-- [NodeJs](https://nodejs.org/en/) - Server Environment
+- Update and improve link definition mechanism
+- Integrate WebBlocker to Firefox and Safari
+- Publish on Extension market
 
 ## ✍️ Authors <a name = "authors"></a>
 
