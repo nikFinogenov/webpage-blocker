@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', function () {
   const saveLink = document.getElementById('saveLink');
   const deleteLast = document.getElementById('deleteLast');
   const deleteAll = document.getElementById('deleteAll');
-  const linkList = document.getElementById('linkList');
   
 
   saveLink.addEventListener('click', function () {
@@ -14,7 +13,6 @@ document.addEventListener('DOMContentLoaded', function () {
         if(!links.includes(trimLink(link))) {
           links.push(trimLink(link));
           chrome.storage.local.set({ links: links }, function() {
-            // addLinkToList(link);
           });
           linkInput.value = '';
         }
@@ -41,26 +39,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
   deleteAll.addEventListener('click', function () {
     chrome.storage.local.set({ links: [] }, function() {
-      // const links = result.links || [];
-      // refreshLinkList(links);
+
     });
     this.blur();
   });
-  // https://www.google.com/intl/ru/gmail/about/
-  // https://mail.google.com/mail/u/0/#inbox
-  // https://www.google.com/search?client=safari&rls=en&q=it&ie=UTF-8&oe=UTF-8
-  // http://www.vsemba.sk/Portals/0/Subory/ERASMUS/IS_BE.pdf?ver=2023-11-20-144223-543
-  // http://3porno365.biz/
-  // http://mob.porno365.bond/
-  // https://y.hentaichan.live/user/
-  // https://lms.khpi.ucode-connect.study/
-  // https://ru.wikipedia.org/wiki/%D0%97%D0%B0%D0%B3%D0%BB%D0%B0%D0%B2%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0
   function trimLink(link) {
     if(link.substring(0, 4) === "http") {
       link = link.split("/")[2];
-      // return link.split("/")[2];
     }
-    // else return link;
     if(link.split(".").length > 2) {
       let arr = link.split(".");
       arr.shift();
@@ -74,16 +60,4 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     return link;
   }
-
-  // function addLinkToList(link) {
-
-  //   const li = document.createElement('li');
-  //   li.textContent = link;
-  //   linkList.appendChild(li);
-  // }
-
-  // function refreshLinkList(links) {
-  //   linkList.innerHTML = '';
-  //   links.forEach(link => addLinkToList(link));
-  // }
 });

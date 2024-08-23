@@ -3,10 +3,8 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
     chrome.storage.local.get(['links'], function(result) {
         const links = result.links || [];
         let tabUrl = tab.url;
-        // console.log(trimLink(tab.url));
         for(let link of links) {
           console.log(tabUrl + "\n" + link + "\n");
-          // console.log(link);
           if(tabUrl.includes(link)) {
             chrome.scripting.executeScript({
               target: { tabId: tabId },
