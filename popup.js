@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
           linkInput.value = '';
         }
         else {
-          alert("already in list")
+          alert("Already in list")
         }
       });
     }
@@ -29,20 +29,19 @@ document.addEventListener('DOMContentLoaded', function () {
       const links = result.links || [];
       if (links.length > 0) {
         links.pop();
-        chrome.storage.local.set({ links: links }, function() {
-          // refreshLinkList(links);
-        });
+        chrome.storage.local.set({ links: links }, function() {});
       }
     });
     this.blur();
   });
 
   deleteAll.addEventListener('click', function () {
-    chrome.storage.local.set({ links: [] }, function() {
-
-    });
+    if(confirm("Do you want to delete ALL list?")) {
+      chrome.storage.local.set({ links: [] }, function() {});
+    }
     this.blur();
   });
+  
   function trimLink(link) {
     if(link.substring(0, 4) === "http") {
       link = link.split("/")[2];

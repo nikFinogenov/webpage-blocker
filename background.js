@@ -4,7 +4,6 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
         const links = result.links || [];
         let tabUrl = tab.url;
         for(let link of links) {
-          console.log(tabUrl + "\n" + link + "\n");
           if(tabUrl.includes(link)) {
             chrome.scripting.executeScript({
               target: { tabId: tabId },
