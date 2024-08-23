@@ -62,13 +62,15 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     // else return link;
     if(link.split(".").length > 2) {
-      let newLink = "";
-      link.split(".").shift().pop().map(
-        (elem) => {
-          newLink.concat(elem);
-        }
-      )
-      return newLink;
+      let arr = link.split(".");
+      arr.shift();
+      arr.pop();
+      link = arr.join(".");
+    }
+    else if(link.split(".").length === 2) {
+      let arr = link.split(".");
+      arr.pop();
+      link = arr.join(".");
     }
     return link;
   }
