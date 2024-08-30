@@ -41,6 +41,7 @@ function showModal() {
 
   const message = document.createElement('p');
   message.textContent = 'Are you sure?';
+  message.style.color = 'black';
 
   const timerMessage = document.createElement('p');
   timerMessage.id = 'timerMessage';
@@ -49,6 +50,7 @@ function showModal() {
 
   let timeLeft = 5;
   timerMessage.textContent = `Redirecting in ${timeLeft} seconds...`;
+  timerMessage.style.color = 'black';
 
 
   const confirmButton = document.createElement('button');
